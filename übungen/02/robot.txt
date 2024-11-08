@@ -1,0 +1,30 @@
+# Schleife, um wiederholt zu prüfen
+WHILE (true)
+    # Item an Tisch angeliefert worden
+    IF (ST)
+        # Prüfen, ob Förderband T frei ist
+        MOVE_TO 19, 13
+        IF (!SR)
+            #Objekt bei T holen und bei FT ablegen
+            MOVE_TO 13, 23
+            MOVE_DOWN   
+            START_SUCKING 
+            MOVE_UP 
+            MOVE_TO 19, 13
+            MOVE_DOWN   
+            STOP_SUCKING  
+            MOVE_UP
+    # Item an Korb angeliefert worden
+    IF (SK)
+        # Prüfen, ob Förderband K frei ist
+        MOVE_TO -4, 36
+        IF (!SR)
+            #Objekt bei K holen und bei FK ablegen
+            MOVE_TO 6, 16
+            MOVE_DOWN   
+            START_SUCKING 
+            MOVE_UP 
+            MOVE_TO -4, 36
+            MOVE_DOWN   
+            STOP_SUCKING  
+            MOVE_UP
